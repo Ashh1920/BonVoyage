@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+</head>
+<body style="background-color: black; ">
+<div style="background-color: rgb(182, 87, 219); border-radius:30px;padding:40px 30px;margin:10%">
+    <form action="register" method="post" style="margin-left:40%;">
+
+        {% csrf_token %}
+
+        <input type="text" name="first_name" placeholder="enter first name"><br><br>
+        <input type="text" name="last_name" placeholder="enter last name"><br><br>
+        <input type="text" name="username" placeholder="enter username"><br><br>
+        <input type="email" name="email" placeholder="enter your email"><br><br>
+        <input type="password" name="password1" placeholder="enter your password"><br><br>
+        <input type="password" name="password2" placeholder="confirm your password"><br><br>
+        <input type="submit" style="margin-left:5%;background-color:black;color:rgb(153, 73, 142);border:2px solid rgb(169, 100, 179);border-radius:10px;padding:10px 30px">
+    </form>
+</div>
+
+    <div>
+
+        {% for i in messages %}
+        <h3> {{i}} </h3>
+        {% endfor %}
+    </div>
+</body>
+</html>
